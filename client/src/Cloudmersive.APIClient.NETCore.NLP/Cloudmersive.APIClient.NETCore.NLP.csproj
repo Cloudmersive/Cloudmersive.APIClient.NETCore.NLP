@@ -1,20 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>Cloudmersive.APIClient.NETCore.NLP</AssemblyName>
     <PackageId>Cloudmersive.APIClient.NETCore.NLP</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>Swagger</Authors>
-    <Company>Swagger</Company>
-    <AssemblyTitle>Swagger Library</AssemblyTitle>
-    <Description>A library generated from a Swagger doc</Description>
+    <Authors>Cloudmersive</Authors>
+    <Company>Cloudmersive</Company>
+    <AssemblyTitle>Cloudmersive NLP API Client</AssemblyTitle>
+    <Description>The powerful Natural Language Processing APIs let you perform part of speech tagging, entity identification, sentence parsing, and much more to help you understand the meaning of unstructured text.</Description>
     <Copyright>No Copyright</Copyright>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>Cloudmersive.APIClient.NETCore.NLP</RootNamespace>
-    <Version>1.1.8</Version>
+    <Version>1.2.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
