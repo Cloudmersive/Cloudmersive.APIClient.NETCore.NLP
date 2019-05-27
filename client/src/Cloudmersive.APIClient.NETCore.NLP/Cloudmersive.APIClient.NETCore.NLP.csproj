@@ -14,8 +14,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>Cloudmersive.APIClient.NETCore.NLP</RootNamespace>
-    <Version>1.2.3</Version>
-  </PropertyGroup>
+    <Version>1.2.4</Version>
+  <PackageIconUrl>https://cloudmersive.com/images/cmsdk_core.png</PackageIconUrl></PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="105.1.0" />
