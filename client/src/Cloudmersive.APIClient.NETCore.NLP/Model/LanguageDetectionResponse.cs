@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.NLP.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.NLP.Model
@@ -28,19 +26,19 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
     /// Output of a language detection operation
     /// </summary>
     [DataContract]
-    public partial class LanguageDetectionResponse :  IEquatable<LanguageDetectionResponse>, IValidatableObject
+    public partial class LanguageDetectionResponse :  IEquatable<LanguageDetectionResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LanguageDetectionResponse" /> class.
         /// </summary>
-        /// <param name="Successful">True if the language detection operation was successful, false otherwise.</param>
-        /// <param name="DetectedLanguageThreeLetterCode">ISO 639 three letter language code.</param>
-        /// <param name="DetectedLanguageFullName">The full name (in English) of the detected language.</param>
-        public LanguageDetectionResponse(bool? Successful = default(bool?), string DetectedLanguageThreeLetterCode = default(string), string DetectedLanguageFullName = default(string))
+        /// <param name="successful">True if the language detection operation was successful, false otherwise.</param>
+        /// <param name="detectedLanguageThreeLetterCode">ISO 639 three letter language code.</param>
+        /// <param name="detectedLanguageFullName">The full name (in English) of the detected language.</param>
+        public LanguageDetectionResponse(bool? successful = default(bool?), string detectedLanguageThreeLetterCode = default(string), string detectedLanguageFullName = default(string))
         {
-            this.Successful = Successful;
-            this.DetectedLanguageThreeLetterCode = DetectedLanguageThreeLetterCode;
-            this.DetectedLanguageFullName = DetectedLanguageFullName;
+            this.Successful = successful;
+            this.DetectedLanguageThreeLetterCode = detectedLanguageThreeLetterCode;
+            this.DetectedLanguageFullName = detectedLanguageFullName;
         }
         
         /// <summary>
@@ -83,7 +81,7 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -143,16 +141,6 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
                     hashCode = hashCode * 59 + this.DetectedLanguageFullName.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

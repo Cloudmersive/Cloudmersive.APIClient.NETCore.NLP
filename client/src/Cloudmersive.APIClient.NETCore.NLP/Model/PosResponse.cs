@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.NLP.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.NLP.Model
@@ -28,15 +26,15 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
     /// Part of speech tag result
     /// </summary>
     [DataContract]
-    public partial class PosResponse :  IEquatable<PosResponse>, IValidatableObject
+    public partial class PosResponse :  IEquatable<PosResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PosResponse" /> class.
         /// </summary>
-        /// <param name="TaggedSentences">Sentences in the string.</param>
-        public PosResponse(List<PosSentence> TaggedSentences = default(List<PosSentence>))
+        /// <param name="taggedSentences">Sentences in the string.</param>
+        public PosResponse(List<PosSentence> taggedSentences = default(List<PosSentence>))
         {
-            this.TaggedSentences = TaggedSentences;
+            this.TaggedSentences = taggedSentences;
         }
         
         /// <summary>
@@ -63,7 +61,7 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -109,16 +107,6 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
                     hashCode = hashCode * 59 + this.TaggedSentences.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

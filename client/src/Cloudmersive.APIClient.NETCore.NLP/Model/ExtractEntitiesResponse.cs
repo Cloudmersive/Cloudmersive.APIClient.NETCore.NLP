@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.NLP.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.NLP.Model
@@ -28,17 +26,17 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
     /// Result of performing an extract entities operation
     /// </summary>
     [DataContract]
-    public partial class ExtractEntitiesResponse :  IEquatable<ExtractEntitiesResponse>, IValidatableObject
+    public partial class ExtractEntitiesResponse :  IEquatable<ExtractEntitiesResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractEntitiesResponse" /> class.
         /// </summary>
-        /// <param name="Successful">True if the operation was successful, false otherwise.</param>
-        /// <param name="Entities">Entities.</param>
-        public ExtractEntitiesResponse(bool? Successful = default(bool?), List<Entity> Entities = default(List<Entity>))
+        /// <param name="successful">True if the operation was successful, false otherwise.</param>
+        /// <param name="entities">entities.</param>
+        public ExtractEntitiesResponse(bool? successful = default(bool?), List<Entity> entities = default(List<Entity>))
         {
-            this.Successful = Successful;
-            this.Entities = Entities;
+            this.Successful = successful;
+            this.Entities = entities;
         }
         
         /// <summary>
@@ -72,7 +70,7 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -125,16 +123,6 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
                     hashCode = hashCode * 59 + this.Entities.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

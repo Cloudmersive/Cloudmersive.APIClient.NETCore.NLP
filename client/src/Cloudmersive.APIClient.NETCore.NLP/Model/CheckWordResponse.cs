@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.NLP.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.NLP.Model
@@ -28,17 +26,17 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
     /// Spelling correction check result
     /// </summary>
     [DataContract]
-    public partial class CheckWordResponse :  IEquatable<CheckWordResponse>, IValidatableObject
+    public partial class CheckWordResponse :  IEquatable<CheckWordResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckWordResponse" /> class.
         /// </summary>
-        /// <param name="Correct">True if the word is spelled correctly, false otherwise.</param>
-        /// <param name="Suggestions">Suggested spelling corrections.</param>
-        public CheckWordResponse(bool? Correct = default(bool?), List<string> Suggestions = default(List<string>))
+        /// <param name="correct">True if the word is spelled correctly, false otherwise.</param>
+        /// <param name="suggestions">Suggested spelling corrections.</param>
+        public CheckWordResponse(bool? correct = default(bool?), List<string> suggestions = default(List<string>))
         {
-            this.Correct = Correct;
-            this.Suggestions = Suggestions;
+            this.Correct = correct;
+            this.Suggestions = suggestions;
         }
         
         /// <summary>
@@ -73,7 +71,7 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -126,16 +124,6 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
                     hashCode = hashCode * 59 + this.Suggestions.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

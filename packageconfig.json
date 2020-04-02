@@ -1,7 +1,8 @@
 ﻿{
 
   "packageName" : "Cloudmersive.APIClient.NETCore.NLP",
-  "packageVersion": "2.0.2",
+  "packageVersion": "2.0.5",
   "netCoreProjectFile": "true",
-  "packageGuid": "3758ad14-af09-4276-9ccc-d16ecb25bd17"
+  "packageGuid": "3758ad14-af09-4276-9ccc-d16ecb25bd17",
+  "targetFramework": "v5.0"
 }  

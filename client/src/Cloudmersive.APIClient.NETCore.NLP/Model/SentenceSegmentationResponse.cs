@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.NLP.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.NLP.Model
@@ -28,19 +26,19 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
     /// SentenceSegmentationResponse
     /// </summary>
     [DataContract]
-    public partial class SentenceSegmentationResponse :  IEquatable<SentenceSegmentationResponse>, IValidatableObject
+    public partial class SentenceSegmentationResponse :  IEquatable<SentenceSegmentationResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SentenceSegmentationResponse" /> class.
         /// </summary>
-        /// <param name="Successful">Successful.</param>
-        /// <param name="Sentences">Sentences.</param>
-        /// <param name="SentenceCount">SentenceCount.</param>
-        public SentenceSegmentationResponse(bool? Successful = default(bool?), List<string> Sentences = default(List<string>), int? SentenceCount = default(int?))
+        /// <param name="successful">successful.</param>
+        /// <param name="sentences">sentences.</param>
+        /// <param name="sentenceCount">sentenceCount.</param>
+        public SentenceSegmentationResponse(bool? successful = default(bool?), List<string> sentences = default(List<string>), int? sentenceCount = default(int?))
         {
-            this.Successful = Successful;
-            this.Sentences = Sentences;
-            this.SentenceCount = SentenceCount;
+            this.Successful = successful;
+            this.Sentences = sentences;
+            this.SentenceCount = sentenceCount;
         }
         
         /// <summary>
@@ -80,7 +78,7 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -140,16 +138,6 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
                     hashCode = hashCode * 59 + this.SentenceCount.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 
