@@ -5,7 +5,7 @@ The powerful Natural Language Processing APIs (v2) let you perform part of speec
 This C# SDK is for the [Cloudmersive Natural Language Processing API](https://www.cloudmersive.com/nlp-api):
 
 - API version: v1
-- SDK version: 2.0.8
+- SDK version: 2.0.9
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -54,17 +54,17 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Apikey", "Bearer");
 
             var apiInstance = new AnalyticsApi();
-            var input = new SentimentAnalysisRequest(); // SentimentAnalysisRequest | Input sentiment analysis request
+            var input = new ProfanityAnalysisRequest(); // ProfanityAnalysisRequest | Input profanity analysis request
 
             try
             {
-                // Perform Sentiment Analysis and Classification on Text
-                SentimentAnalysisResponse result = apiInstance.AnalyticsSentiment(input);
+                // Perform Profanity and Obscene Language Analysis and Detection on Text
+                ProfanityAnalysisResponse result = apiInstance.AnalyticsProfanity(input);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AnalyticsApi.AnalyticsSentiment: " + e.Message );
+                Debug.Print("Exception when calling AnalyticsApi.AnalyticsProfanity: " + e.Message );
             }
 
         }
@@ -79,6 +79,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AnalyticsApi* | [**AnalyticsProfanity**](docs/AnalyticsApi.md#analyticsprofanity) | **POST** /nlp-v2/analytics/profanity | Perform Profanity and Obscene Language Analysis and Detection on Text
 *AnalyticsApi* | [**AnalyticsSentiment**](docs/AnalyticsApi.md#analyticssentiment) | **POST** /nlp-v2/analytics/sentiment | Perform Sentiment Analysis and Classification on Text
 *ExtractEntitiesApi* | [**ExtractEntitiesPost**](docs/ExtractEntitiesApi.md#extractentitiespost) | **POST** /nlp-v2/extract-entities | Extract entities from string
 *LanguageDetectionApi* | [**LanguageDetectionGetLanguage**](docs/LanguageDetectionApi.md#languagedetectiongetlanguage) | **POST** /nlp-v2/language/detect | Detect language of text
@@ -123,6 +124,8 @@ Class | Method | HTTP request | Description
  - [Model.PosResponse](docs/PosResponse.md)
  - [Model.PosSentence](docs/PosSentence.md)
  - [Model.PosTaggedWord](docs/PosTaggedWord.md)
+ - [Model.ProfanityAnalysisRequest](docs/ProfanityAnalysisRequest.md)
+ - [Model.ProfanityAnalysisResponse](docs/ProfanityAnalysisResponse.md)
  - [Model.RephraseRequest](docs/RephraseRequest.md)
  - [Model.RephraseResponse](docs/RephraseResponse.md)
  - [Model.RephrasedSentence](docs/RephrasedSentence.md)

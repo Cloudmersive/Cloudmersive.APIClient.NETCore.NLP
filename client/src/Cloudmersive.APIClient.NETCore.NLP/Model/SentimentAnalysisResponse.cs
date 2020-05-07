@@ -31,7 +31,7 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SentimentAnalysisResponse" /> class.
         /// </summary>
-        /// <param name="successful">True if the language detection operation was successful, false otherwise.</param>
+        /// <param name="successful">True if the sentiment analysis operation was successful, false otherwise.</param>
         /// <param name="sentimentClassificationResult">Classification of input text into a sentiment classification; possible values are \&quot;Positive\&quot;, \&quot;Negative\&quot; or \&quot;Neutral\&quot;.</param>
         /// <param name="sentimentScoreResult">Sentiment classification score between -1.0 and +1.0 where scores less than 0 are negative sentiment, scores greater than 0 are positive sentiment and scores close to 0 are neutral.  The greater the value deviates from 0.0 the stronger the sentiment, with +1.0 and -1.0 being maximum positive and negative sentiment, respectively..</param>
         /// <param name="sentenceCount">Number of sentences in input text.</param>
@@ -44,9 +44,9 @@ namespace Cloudmersive.APIClient.NETCore.NLP.Model
         }
         
         /// <summary>
-        /// True if the language detection operation was successful, false otherwise
+        /// True if the sentiment analysis operation was successful, false otherwise
         /// </summary>
-        /// <value>True if the language detection operation was successful, false otherwise</value>
+        /// <value>True if the sentiment analysis operation was successful, false otherwise</value>
         [DataMember(Name="Successful", EmitDefaultValue=false)]
         public bool? Successful { get; set; }
 
